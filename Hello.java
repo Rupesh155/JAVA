@@ -83,5 +83,7 @@ public   class Hello{
         // int a =130;
         // byte b=(byte)a;  256 -128 to 12
         // System.out.println(b);
+        int a=5;
+        System.out.println(a);
     }
 }
