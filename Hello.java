@@ -67,10 +67,21 @@ public   class Hello{
 
         //   128     
         // System.out.println(false&&true);
-          
+
+        // long a=5;
+        // double b=(int)a;
+        // System.out.println(b);
+        // int a=130;
+        // byte b=(byte)a;
+        // System.out.println(b);
+        //   int a='A'+32+' ';
+        //   System.out.println(a);
+        // boolean a=false;
+        // boolean b=true;
+
+        // System.out.println(ab);
+        // int a =130;
+        // byte b=(byte)a;  256 -128 to 12
+        // System.out.println(b);
     }
-
-
-  
-
 }
