@@ -1,5 +1,7 @@
 
-// int arr=[1,2,3,4,5,6,7]
+
+
+
 
 
 // target =5\
@@ -1821,30 +1823,672 @@
 
 // }
 
+// import java.util.Scanner;
 
-interface  Payment{
-    void pay(int a);
+// public class Two_String_Are_Anagrams_Or_Not {
+//  public static void main(String[] args) {
+ 
+//  Scanner sc=new Scanner(System.in);
 
-}
+//  // System.out.println("Enter first string:");
+//  // String str1 = sc.nextLine();
 
-class UpiPayment implements  Payment{
-     public  void pay(int a){
-        System.out.println("payment via upi ");
+//  // System.out.println("Enter second string:");
+//  // String str2 = sc.nextLine();
 
-    }
+//  String str1 = "geeks";
+//  String str2 = "ksept";
+
+//  String tempStr = "";
+
+//  int i;
+//  for(i=0;i<str1.length();i++){
+//  char ch = str1.charAt(i);
+//  int count=1;
+//  int tempCount = 0;
+//  for(int j=i+1;j<str1.length();j++){
+//  if(ch==str1.charAt(j))
+//  count++;
+//  }
+//  for(int j=0;j<str2.length();j++){
+//  if(ch==str2.charAt(j))
+//  tempCount++;
+//  }
+//  if(tempCount==count && !tempStr.equals(ch))
+//  tempStr = tempStr + ch;
+//  System.out.println(i);
+//  }
+
+//  if(str1.length()==str2.length())
+//  System.out.println("Both Strings Are Anagrams!");
+//  else
+//  System.out.println("Both Strings Are Not Anagrams!"); 
+//  }
+// }
+
+// import java.util.Arrays;
+// public class Two_String_Are_Anagrams_Or_Not {
+//     public static void main(String[] args) {
+//         String str1 = "geeks";
+//         String str2 = "kseeg";
+//         // Step 1: Check lengths
+//         if (str1.length() != str2.length()) {
+//             System.out.println("Both Strings Are Not Anagrams!");
+//             return;
+//         }
+//         // Step 2: Convert to char arrays
+//         char[] arr1 = str1.toCharArray();
+//         char[] arr2 = str2.toCharArray();
+
+//         // Step 3: Sort both
+//         Arrays.sort(arr1);
+//         Arrays.sort(arr2);
+//         // Step 4: Compare sorted arrays
+//         if (Arrays.equals(arr1, arr2)) {
+//             System.out.println("Both Strings Are Anagrams!");
+//         } else {
+//             System.out.println("Both Strings Are Not Anagrams!");
+//         }
+//     }
+// }
 
 
-}
 
-class Main{
+// class Hello{
+//     public static void main(String[] args) {
+        
+//         int[] arr={-1,3,0,2,-4,0,0};
+//         int[] newArr=new int[arr.length];
+
+//         int index=0;
+//         for(int i=0;i<arr.length;i++){
+//             if(arr[i]<0){
+//                 newArr[index++]=arr[i];
+//             }
+//         }
+//         for(int j=0;j<arr.length;j++){
+//             if(arr[j]==0){
+//                 newArr[index++]=arr[j];
+
+//             }
+
+//         }
+//         for(int k=0;k<arr.length;k++){
+//             if(arr[k]>0){
+//                 newArr[index]=arr[k];
+                
+//             }
+
+//         }
+//         for(int p=0;p<arr.length;p++){
+//             System.out.println(newArr[p]);
+//         }
+
+
+//     }
+// }
+
+
+
+// class Hello{
+//     public static void main(String[] args) {
+//         int[] arr={1,2,3,4,5};
+//         int last =    arr[arr.length-1];
+
+//         for(int i=arr.length-1;i>0;i--){
+//             arr[i]=arr[i-1];
+//         }
+//         arr[0]=last;
+//         for(int j=0;j<arr.length;j++){
+
+//            System.out.println(arr[j]);
+//         }
+//     }
+// }
+
+// int[] arr={-4,0,5,5,0,0,-5}
+// int[] newARR=new int[arr.lenght]
+
+// if(arr[i]>0)
+
+// int[] newArr={0,0,-4,-5,5,5}
+
+
+// class Hello{
+//     public static void main(String[] args) {
+//         int[] arr={-3,-5,5,0,10,0};
+//         int index=0;
+//         int[] newArr=new int[arr.length];
+//         for(int i=0;i<arr.length;i++){
+//             if(arr[i]<0){
+//                 newArr[index++]=arr[i];
+
+//             }
+            
+//         }
+//         for(int j=0;j<arr.length;j++){
+//             if(arr[j]==0){
+//                 newArr[index++]=arr[j];
+
+//             }
+            
+//         }
+//         for(int k=0;k<arr.length;k++){
+//             if(arr[k]==0){
+//                 newArr[index++]=arr[k];
+
+//             }
+            
+//         }
+//         for(int p:newArr){
+//             System.out.println(p);
+//         }
+//     }
+// }
+
+// int[] arr={1,2,3,4,5}
+// {5,1,2,3,4}
+
+// for(int i=arr.length-1;i<0;i--){
+//     arr[i]=arr[i-1]
+// }
+// arr[0]=arr.legnth-1
+
+
+
+
+
+
+
+// class Hello{
+//     public static void main(String[] args) {
+//         int[] arr={1,2,3,4,5};
+//         int lastValue=arr[arr.length-1];
+//         for(int i=arr.length-1;i>0;i--){
+//                arr[i]=arr[i-1];
+//         }
+//         arr[0]=lastValue;
+//         for(int k:arr){
+//             System.out.println(k);
+//         }
+//     }
+// }
+
+
+
+
+
+// {5,1,2,3,4}
+
+
+// class Hello{
+//     public static void main(String[] args) {
+//         int[] arr={1,2,3,4,5};
+//     int  lastValue=arr[arr.length-1];
+
+//         for(int i=arr.length-1;i>0;i--){
+//             arr[i]=arr[i-1];
+//         }
+//         arr[0]=lastValue;
+//         for(int k :arr){
+//             System.out.println(k);
+//         }
+
+        
+//     }
+// }
+
+
+// aaabbccccddddda  =>   a3b2c4d5a1
+
+
+
+// interface  A{
+//     void show();
+// }
+// interface  B{
+//     void show();
+
+// }
+
+// class  Hello implements  A,B{
+//     public  void show(){
+//         System.out.println(" class A && B");
+//     }
+//     public static void main(String[] args) {
+//         Hello obj=new Hello();
+//         obj.show();
+        
+//     }
+
+// }
+
+
+// class A{
+//     void show(){
+//         System.out.println("mai hu A");
+//     }
+// }
+// class B{
+//     void show(){
+//         System.out.println("mai hu B");
+//     }
+// }
+// class Hello extends  A,B{
+//     public static void main(String[] args) {
+//          Hello obj=new Hello();
+
+//     }
+// }
+
+// abstract  class payment {
+//     abstract void show();
+// }
+// class  UpiPayment extends  payment{
+//     void show(){
+//         System.out.println("upi se payment");
+//     }
+// }
+// class Hello{
+//     public static void main(String[] args) {
+//         UpiPayment  obj=new UpiPayment();
+//         obj.show(); 
+
+//     }
+// }
+
+
+//  abstract   class Payment{
+//        abstract  void pay();
+//        void sum(){
+//        }
+    
+
+//  }
+//  class UpiPayment extends  Payment{
+//     void pay(){
+//         System.out.println("pay via upi");
+//     }
+
+//  }
+// // class Animal{
+//     void eat(){
+//         System.out.println("eattt pizza");
+//     }
+
+// }
+// class Dog extends Animal{
+//     void bark(){
+
+//     }
+// }
+
+// class Hello{
+//     public static void main(String[] args) {
+//         Payment obj=new UpiPayment();
+//         obj.pay();
+//         // Dog obj=new Dog();
+//         // obj.bark();
+//         // obj.eat();
+//         // System.out.println("hello");
+        
+//     }
+// }
+
+    // class A{
+    //     void sum(){
+    //         System.out.println("mai hu kaun A");
+    //     }
+    // }
+    // class B{
+    //     void sum(){
+    //         System.out.println("mai hu kaun B");
+    //     }
+    // }
+    // class C extends  A,B{
+    //     public static void main(String[] args) {
+    //         C obj= new C();
+    //         obj.sum()
+            
+    //     }
+    // }
+
+//     interface   Client{
+
+    
+//         void show();
+
+//     }
+//     interface   Client2{
+
+    
+//     //  void show();
+//     void print();
+
+//  }
+
+//     // class Dev implements  Client{
+//     //   public   void print(){
+//     //     System.out.println("print the bill");
+
+//     //     }
+//     //     public   void show(){
+//     //         System.out.println("show the manu");
+
+//     //     }
+
+
+//     // }
+
+
+// class Hello implements  Client,Client2{
+//     public  avoid show(){
+//         System.out.println("this is common feature for Cleint && Cleint");
+//     }
+//     public  void print(){
+
+//     }
+//     public static void main(String[] args) {
+//         Hello obj =new Hello();
+//         obj.show();
+
+       
+        
+//     }
+// }
+
+
+// class Hello{
+//     public static void main(String[] args) {
+
+//    String  str="a a a b bbbccca";// a3b4c2a1
+//    StringBuilder newStr=new  StringBuilder();
+//    int count=1;
+//    for(int i=1;i<str.length();i++){
+//     if(str.charAt(i)==str.charAt(i-1)){
+//         count++;
+//     }
+//     else{
+//         newStr.append(str.charAt(i-1)).append(count);
+//         count=1;
+
+//     }
+
+//    }
+//    System.out.println(newStr);
+
+
+
+
+
+//     }
+
+// }
+
+// class A{
+//     void sum(){
+//         System.out.println("hello mai hu A");
+//     }
+// }
+// class B{
+//     void sum(){
+//         System.out.println("hello mai hu B");
+//     }
+// }
+
+
+
+
+// class Hello extends  A,B{
+//     public static void main(String[] args) {
+//         Hello  obj=new Hello();
+//         obj.sum()     
+//     }
+// }
+
+//  abstract class Payment{
+//     abstract   void pay();
+
+
+// }
+// class UpiPayment{
+//     void pay(){
+//         System.out.println("pay via upi");
+//     }
+
+
+// }
+
+// class Hello{
+//     public static void main(String[] args) {
+//      Payment obj=     new UpiPayment();
+        
+//     }
+// }
+
+
+
+// interface Cleint{
+//       void print();
+//       void show();
+// }
+// // class Dev implements Cleint{
+// //   public   void print(){
+// //     System.out.println("bill");
+
+// //     }
+// //    public  void show(){
+// //     System.out.println("biryaniiiii");
+
+// //     }
+
+// // }
+
+// // class Hello{
+// //     public static void main(String[] args) {
+// //         Dev obj =new Dev();
+// //         obj.show();
+        
+// //     }
+// // }
+
+// // interface Cleint1{
+// //     void show();
+// // }
+// // interface Cleint2{
+// //     void show();
+// //     void print();
+// // }
+// // class Helllo implements Cleint1,Cleint2{
+// //     public  void show(){
+// //         System.out.println("for both");
+// //     }
+// //     public  void print(){
+        
+// //     }
+// //     public static void main(String[] args) {
+        
+// //     }
+// // }
+
+
+
+// class Hello{
+//     public static void main(String[] args) {
+//         int a=10;int b=0;
+//         try {
+//             int c =a/b;
+//             System.out.println(c);
+            
+//         } catch (ArrayIndexOutOfBoundsException e) {
+//             System.out.println("we can not divie by zero");
+//         }
+//         finally{
+//             System.out.println("mai hamesha chalunga");
+//         }
+        
+     
+//         System.out.println("mai kab run karunga ");
+
+//     }
+// }
+
+
+
+// class Hello{
+//     public static void main(String[] args) {
+//         // int a=10; int b=0;
+//         int[] arr={1,2,3,4,5};
+//         try {
+            
+//             System.out.println(arr[8]);
+//         } catch (ArrayIndexOutOfBoundsException e) {
+//             System.out.println(e);
+//         }catch(ArithmeticException e){
+//             System.out.println("");
+
+//         }finally{
+
+//         }
+     
+      
+//         System.out.println("hello");
+//         System.out.println("hii");
+//         System.out.println("byeee");
+   
+//     }
+
+// }
+
+
+// class Hello{
+//     public static void main(String[] args) {
+//         int[] arr={1,2,3,4};
+//         System.out.println(arr[6]);
+//         System.out.println("kya mai aaungaaa");
+//     }
+// }
+
+
+
+
+
+
+// int [] arr={2,3,5,5,-1,0,4};
+
+// class Hello{
+//     public static void main(String[] args) {
+//         int a=10;int b=0;
+//         try {
+//             int c=a/b;
+
+//             System.out.println(c);
+            
+//         } catch (Exception e ) {
+//             System.out.println(e);
+//         }
+//         System.out.println("helllo");
+//         System.out.println("hiiii");
+        
+//     }
+// }
+
+
+
+
+// class Hello{
+//     public static void main(String[] args) {
+//         int age = 15;
+//         if (age < 18) {
+//             throw new ArithmeticException("Age must be 18 or above");
+//         }
+
+//       // int[]   arr={1,-2,3,4,-5,0};
+//         // for(int i=0;i<=arr.length;i++){
+//         //     System.out.println(arr[i]);
+//         // }
+//         // String str=null;
+//         // System.out.println(str.toUpperCase());
+//         // int[] arr={2,1,2,34}; 
+//         // try {
+//         //     System.out.println(arr[6]);
+            
+//         // } catch (Exception e) {
+//         //     System.out.println(e);
+//         // }
+//         // System.out.println("hello");
+
+
+//     }
+// }
+
+
+
+// class Hello{
+//     public static void main(String[] args) {
+//         ArrayList<String>  obj =new ArrayList<>();
+//         obj.add("hello");
+//         obj.add("hiii");
+//         obj.add(1,"rohit");
+//         obj.set(1, "mohit");
+//         System.out.println(obj);
+//         System.out.println(obj.getLast());
+//         System.out.println(obj.get(2));
+//     }
+// }
+
+
+
+import java.util.ArrayList;
+import java.util.Collections;
+class Hello{
     public static void main(String[] args) {
-        Payment obj=new UpiPayment();
-        obj.pay(5001);   
-        final  int a=4;
-        System.out.println(a);
+        int[]  arr1={2,-7,0,5,6,-3,0,1};
 
+        
+        ArrayList<String> arr= new ArrayList<>();
+        arr.add("a");
+        arr.add("B");
+        arr.add("D");
+        Collections.sort(arr);
+        System.out.println(arr);
+        
+        // for(String str: arr){
+        //     System.out.println(str);
+        // }
+        
+        // arr.add(0,"jain");
+        // System.out.println(arr);
+        // System.out.println(arr.get(2));
+    
+        
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
