@@ -937,58 +937,215 @@
 //     }
 // }
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Comparator;
+// class FileDownload extends Thread {
+//     String fileName;
 
-class Student{
-    int age;
-    String name;
-    int rollNo;
-    public Student(int age,String name,int rollNo){
-        this.age=age;
-        this.name=name;
-        this.rollNo=rollNo;
+//     FileDownload(String fileName) {
+//         this.fileName = fileName;
+//     }
 
+//     public void run() {
+//         for (int i = 1; i <= 5; i++) {
+//             System.out.println(fileName + " downloading... " + (i * 20) + "%");
+//             try {
+//                 Thread.sleep(1000); // simulate 1 second delay per chunk
+//             } catch (InterruptedException e) {
+//                 e.printStackTrace();
+//             }
+//         }
+//         System.out.println(fileName + " download complete!");
+//     }
+// }
+
+// public class DownloadSimulatorWithThread {
+//     public static void main(String[] args) {
+//         FileDownload fileA = new FileDownload("File A");
+//         FileDownload fileB = new FileDownload("File B");
+
+//         fileA.start(); // Starts thread for File A
+//         fileB.start(); // Starts thread for File B
+//     }
+// }
+
+
+// class MyThread extends Thread{
+//     public  void  run(){
+//         System.out.println("hello");
+//         try {
+//             Thread.sleep(2000);
+//         } catch (InterruptedException e) {
+//             // TODO Auto-generated catch block
+//             e.printStackTrace();}
+//             System.out.println("After 2 seconds");
+
+       
+
+//     }
+// }
+// class Hello{
+//     public static void main(String[] args) {
+//        MyThread t1=  new MyThread();
+//        t1.start();
+    
+//     }
+// }
+
+
+// class Hello{
+//     static  void  downloadFile(String fileName){
+//         for(int i=0;i<=5;i++){
+//             System.out.println(fileName +  " "+"downloading..." +(i*20)+ "%");
+//             try {
+//                 Thread.sleep(1000);
+//             } catch (InterruptedException e) {
+//                 e.printStackTrace();
+//             }
+       
+//         }
+//         System.out.println(fileName + " download complete!");
+
+//     }
+//     public static void main(String[] args) {
+//         downloadFile("file A");
+//         downloadFile("file B");
+
+        
+//     }
+// }
+
+// class DownloadThread extends Thread {
+//     private String fileName;
+
+//     public DownloadThread(String fileName) {
+//         this.fileName = fileName;
+//     }
+
+//     public void run() {
+//         for (int i = 1; i <= 5; i++) {
+//             System.out.println(fileName + " downloading... " + (i * 20) + "%");
+//             try {
+//                 Thread.sleep(1000); // simulate download time
+//             } catch (InterruptedException e) {
+//                 e.printStackTrace();
+//             }
+//         }
+//         System.out.println(fileName + " download complete!");
+//     }
+// }
+
+// public class DownloadSimulatorWithThread {
+//     public static void main(String[] args) {
+//         DownloadThread t1 = new DownloadThread("File A");
+//         DownloadThread t2 = new DownloadThread("File B");
+//         t1.start();
+//         t2.start();
+//     }
+// }
+
+// class MyThread  extends Thread{
+//     public  void run(){
+//         System.out.println("hello ");
+    
+//         try {
+//             Thread.sleep(5000);
+            
+//         } catch (Exception e) {
+//         }
+//             System.out.println("hiii");
+//     }
+
+// }
+// class Hello{
+//     public static void main(String[] args) {  
+//         MyThread t1=new MyThread();
+//         t1.start();
+//         //   for(int i=0;i<5;i++){
+//         //     System.out.println("hiii");
+
+//         //   }
+       
+//     }
+// }
+
+
+// class MyThread extends Thread {
+//     public void run() {
+//         System.out.println("hello ");
+//     }
+// }
+
+// class Hello {
+//     public static void main(String[] args) {
+//         MyThread t1 = new MyThread();
+      
+//         t1.start(); 
+// //         for (int i = 0; i < 5; i++) {
+// //             System.out.println("hiii");
+// //         }
+// //     }
+// // }
+
+// class downloadFile{
+//     public  static  void file(String file){
+//         for(int i=1;i<=5;i++){
+//    System.out.println(file +" " +"dowloding..." + (i*20) + "%");
+//             try {
+//                 Thread.sleep(2000);
+//             } catch (Exception e) {
+//             }
+//         }
+        
+
+//         System.out.println(file + "done");
+
+//     }
+
+// }
+
+// class Hello{
+//     public static void main(String[] args) {
+//         downloadFile obj =new downloadFile();
+//         obj.file("file A");
+//         obj.file("file B");
+
+
+//         // file("file A");
+//         // file("file B");
+
+
+           
+//     }
+// }
+
+
+
+
+class FileDownload extends  Thread{
+    String fileName;
+
+    public FileDownload(String fileName) {
+        this.fileName=fileName;
     }
-    public  String toString(){
-        return age + " " + name + " " + rollNo;
-    }
+      public  void run(){
+        for(int i=1;i<=5;i++){
+                   System.out.println(fileName +" " +"dowloding..." + (i*20) + "%");
+                   try {
+                       Thread.sleep(2000);
+                   } catch (Exception e) {
+                   }
+        }
+        System.out.println(fileName + "doneeeeee");
+      }
+     
 }
-class sortByName implements  Comparator<Student>{
-    public int compare(Student s1,Student s2){
-        return s1.name.compareTo(s2.name);
 
-    }
-}
-class sortByAge implements  Comparator<Student>{
-    public int compare(Student s1,Student s2){
-        return s1.age-s2.age;
-
-    }
-}
-
-
-class  Hello{
+class Hello{
     public static void main(String[] args) {
-        ArrayList<Student> list=new ArrayList<>();
-        list.add(new Student(10, "rohit", 45));
-        list.add(new Student(32, "mohit", 34));
-        list.add(new Student(10, "om", 55));
-        Collections.sort(list,new sortByName());
-        for(Student s :list){
-            System.out.println(s);
-        }
-        Collections.sort(list,new sortByAge());
-        for(Student s2 :list){
-            System.out.println(s2);
-        }
+        FileDownload t1= new FileDownload("File A");
+        FileDownload t2= new FileDownload("File B");
+        t1.start();
+        t2.start();
 
-
-
-
+        
     }
 }
-
-
-
