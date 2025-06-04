@@ -1,14 +1,4 @@
 
-
-
-
-
-
-
-
-
-
-// public class ListIteratorExample {
 //     public static void main(String[] args) {
 //         // Step 1: Create a list of strings
 //         List<String> cities = new ArrayList<>();
@@ -1120,32 +1110,305 @@
 
 
 
-class FileDownload extends  Thread{
-    String fileName;
+// class FileDownload extends  Thread{
+//     String fileName;
 
-    public FileDownload(String fileName) {
-        this.fileName=fileName;
-    }
-      public  void run(){
-        for(int i=1;i<=5;i++){
-                   System.out.println(fileName +" " +"dowloding..." + (i*20) + "%");
-                   try {
-                       Thread.sleep(2000);
-                   } catch (Exception e) {
-                   }
-        }
-        System.out.println(fileName + "doneeeeee");
-      }
+//     public FileDownload(String fileName) {
+//         this.fileName=fileName;
+//     }
+//       public  void run(){
+//         for(int i=1;i<=5;i++){
+//                    System.out.println(fileName +" " +"dowloding..." + (i*20) + "%");
+//                    try {
+//                        Thread.sleep(2000);
+//                    } catch (Exception e) {
+//                    }
+//         }
+//         System.out.println(fileName + "doneeeeee");
+//       }
      
-}
+// }
 
-class Hello{
-    public static void main(String[] args) {
-        FileDownload t1= new FileDownload("File A");
-        FileDownload t2= new FileDownload("File B");
-        t1.start();
-        t2.start();
+// class Hello{
+//     public static void main(String[] args) {
+//         FileDownload t1= new FileDownload("File A");
+//         FileDownload t2= new FileDownload("File B");
+//         t1.start();
+//         t2.start();
 
         
+//     }
+// }
+
+// class MyThread  extends Thread{
+//     public  void run(){
+//         System.out.println("hello");
+//         try {
+//             Thread.sleep(4000);
+//         } catch (Exception e) {
+//         }
+//         System.out.println("hiiii");
+
+//     }
+// }
+
+// class Hello{
+//     public static void main(String[] args) {
+//         MyThread t1=new MyThread();
+//         t1.start();
+     
+     
+//     }
+// }
+
+
+// class FileDownload{
+//     public static  void download(String file){
+//         for(int i=1;i<=5;i++){
+//             System.out.println(file + " "+ "downloading...." + (i*20)+ "%");
+//             try {
+//                 Thread.sleep(2000);
+//             } catch (Exception e) {
+//             }
+//         }
+//         System.out.println(file + "done");
+//     }
+
+// }
+
+// class  Hello{
+//     public static void main(String[] args) {
+//         FileDownload obj=new FileDownload();
+//         obj.download("file A");
+//         obj.download("file B");
+
+        
+//     }
+
+// }
+
+
+
+// class downloadFile extends Thread{
+//     String fileName;
+
+//     public downloadFile(String fileName) {
+//         this.fileName=fileName;
+//     }
+//      public  void run(){
+//         for(int i=1;i<=5;i++){
+//         System.out.println(fileName + " "+ "downloading...." + (i*20)+ "%");
+//         try {
+//             Thread.sleep(2000);
+//         } catch (Exception e) {
+//         }
+//         }
+//         System.out.println(fileName + " "  + "done ");
+//      }
+    
+// }
+
+// class Hello{
+//     public static void main(String[] args) {
+//         downloadFile t1= new downloadFile("file A");
+//         downloadFile t2= new downloadFile("file B");
+//         downloadFile t3= new downloadFile("file C");
+//         t1.start();
+//         t2.start();
+//         t3.start();
+
+
+        
+//     }
+// }
+
+
+
+// class MyThread extends Thread{
+//     public  void run(){
+//         System.out.println("hello");
+//     }
+// }
+// class Hello{
+//     public static void main(String[] args) {
+//         MyThread obj = new MyThread();
+//         obj.run();
+//         // try {
+//         //     obj.join();
+//         // } catch (InterruptedException e) {
+//         //     // TODO Auto-generated catch block
+//         //     e.printStackTrace();
+//         // }
+//         for(int i =0;i<5;i++){
+//             System.out.println(i);
+//         }
+        
+//     }
+// }
+
+
+
+// class MyRunnable implements Runnable {
+//     public void run() {
+//         for(int i=1; i<=5; i++) {
+//             System.out.println(Thread.currentThread().getName() + " -> " + i);
+//         }
+//     }
+// }
+
+// public class Demo3 {
+//     public static void main(String[] args) {
+//         Thread t1 = new Thread(new MyRunnable());
+//         Thread t2 = new Thread(new MyRunnable());
+
+//         t1.start();
+//         t2.start();
+//     }
+// }
+
+
+
+// class WithdrawThread extends Thread {
+//     static int balance = 1000; // shared account balance
+//     int amount;
+
+//     WithdrawThread(int amount) {
+//         this.amount = amount;
+//     }
+
+//     public void run() {
+//         // ⚠️ No synchronization used here
+//         if (balance >= amount) {
+//             System.out.println(Thread.currentThread().getName() + " is going to withdraw " + amount);
+
+//             try { Thread.sleep(1000); } catch (InterruptedException e) {}
+
+//             balance -= amount;
+//             System.out.println(Thread.currentThread().getName() + " completed withdrawal. Remaining balance: " + balance);
+//         } else {
+//             System.out.println(Thread.currentThread().getName() + " - Insufficient balance");
+//         }
+//     }
+// }
+
+// public class DemoProblem {
+//     public static void main(String[] args) {
+//         WithdrawThread t1 = new WithdrawThread(800);
+//         WithdrawThread t2 = new WithdrawThread(500);
+
+//         t1.start();
+//         t2.start();
+//     }
+// }
+
+
+
+
+
+class WithdrawThread extends Thread {
+    static int balance = 1000; 
+    int amount;
+
+    WithdrawThread(int amount) {
+        this.amount = amount;
+    }
+
+    public void run() {
+        synchronized(WithdrawThread.class) {
+            if (balance >= amount) {
+                System.out.println(Thread.currentThread().getName() + " is going to withdraw " + amount);
+                try { Thread.sleep(100); } catch (InterruptedException e) {}
+                balance -= amount;
+                System.out.println(Thread.currentThread().getName() + " completed withdrawal. Remaining balance: " + balance);
+            } else {
+                System.out.println(Thread.currentThread().getName() + " - Insufficient balance");
+            }
+        }
     }
 }
+
+public class DemoFixed {
+    public static void main(String[] args) {
+        WithdrawThread t1 = new WithdrawThread(800);
+        WithdrawThread t2 = new WithdrawThread(500);
+
+        t1.start();
+        t2.start();
+    }
+}
+ 
+                            
+// class MyRunnable implements Runnable {
+//     public void run() {
+//         System.out.println("Thread using Runnable interface");
+//     }
+// }
+
+// public class Demo2 {
+//     public static void main(String[] args) {
+//         MyRunnable obj = new MyRunnable();
+//         Thread t1 = new Thread(obj); 
+//         t1.start();
+//         try {
+//             t1.join();
+//         } catch (InterruptedException e) {
+//             // TODO Auto-generated catch block
+//             e.printStackTrace();
+//         }
+//         for(int i =1;i<5;i++){
+//             System.out.println(i);
+//         }
+
+//     }
+// }
+
+// class Hello{
+//     int balance=1000;
+
+//     Thread A=> 800
+//     Thread B=> 500
+
+
+
+//     public static void main(String[] args) {
+        
+//     }
+// }
+
+//  class withdrawal extends Thread{
+//     static  int totalBalance=1000;
+//     int amount;
+
+//     public withdrawal(int amount) {
+//         this.amount=amount;
+//     }
+//     public  void run(){
+
+//         if(totalBalance>=amount){
+//             System.out.println("is going to withdrawal"+" " + amount);
+//             try {
+//                 Thread.sleep(1000);
+//             } catch (InterruptedException ex) {
+//             }
+//             totalBalance-=amount;
+//             System.out.println("Remaining paisaaaaaaa" +"  "+ totalBalance);
+//         }
+//         else{
+//             System.out.println(" sorry aap gareeb haiii !!!!");
+//         }
+//     }
+    
+
+
+//  }
+
+// class Hello{
+//     public static void main(String[] args) {
+//            withdrawal t1=    new   withdrawal(800);
+//            withdrawal t2=    new   withdrawal(500);
+//            t1.start();
+//            t2.start();
+
+        
+//     }
+// }
