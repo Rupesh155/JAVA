@@ -1305,37 +1305,37 @@
 
 
 
-class WithdrawThread extends Thread {
-    static int balance = 1000; 
-    int amount;
+// class WithdrawThread extends Thread {
+//     static int balance = 1000; 
+//     int amount;
 
-    WithdrawThread(int amount) {
-        this.amount = amount;
-    }
+//     WithdrawThread(int amount) {
+//         this.amount = amount;
+//     }
 
-    public void run() {
-        synchronized(WithdrawThread.class) {
-            if (balance >= amount) {
-                System.out.println(Thread.currentThread().getName() + " is going to withdraw " + amount);
-                try { Thread.sleep(100); } catch (InterruptedException e) {}
-                balance -= amount;
-                System.out.println(Thread.currentThread().getName() + " completed withdrawal. Remaining balance: " + balance);
-            } else {
-                System.out.println(Thread.currentThread().getName() + " - Insufficient balance");
-            }
-        }
-    }
-}
+//     public void run() {
+//         synchronized(WithdrawThread.class) {
+//             if (balance >= amount) {
+//                 System.out.println(Thread.currentThread().getName() + " is going to withdraw " + amount);
+//                 try { Thread.sleep(100); } catch (InterruptedException e) {}
+//                 balance -= amount;
+//                 System.out.println(Thread.currentThread().getName() + " completed withdrawal. Remaining balance: " + balance);
+//             } else {
+//                 System.out.println(Thread.currentThread().getName() + " - Insufficient balance");
+//             }
+//         }
+//     }
+// }
 
-public class DemoFixed {
-    public static void main(String[] args) {
-        WithdrawThread t1 = new WithdrawThread(800);
-        WithdrawThread t2 = new WithdrawThread(500);
+// public class DemoFixed {
+//     public static void main(String[] args) {
+//         WithdrawThread t1 = new WithdrawThread(800);
+//         WithdrawThread t2 = new WithdrawThread(500);
 
-        t1.start();
-        t2.start();
-    }
-}
+//         t1.start();
+//         t2.start();
+//     }
+// }
  
                             
 // class MyRunnable implements Runnable {
@@ -1412,3 +1412,217 @@ public class DemoFixed {
         
 //     }
 // }
+
+
+
+
+// class MyRunnable implements Runnable {
+//     public  void run(){
+//         System.out.println(Thread.currentThread().getName()+ "hiiii");
+//     }
+          
+// }       
+// class Hello{
+//     public static void main(String[] args) {
+//         MyRunnable obj= new MyRunnable();
+//                Thread t1=    new Thread(obj);
+//                t1.start();
+//             //    try {
+//             //     t1.join();
+//             // } catch (InterruptedException e) {
+//             //     // TODO Auto-generated catch block
+//             //     e.printStackTrace();
+//             // }
+//                System.out.println("hello");
+        
+//     }
+
+
+// }
+
+
+// class WithdrawThread  extends Thread{
+//     static  int totalBalance=1000;
+//     int amount;
+
+//     public WithdrawThread(int amount) {
+//         this.amount=amount;
+//     }
+
+//     public  void run(){
+//         if(totalBalance>=amount){
+//             System.out.println("paisa aapke pass aa jayega" + amount);
+//             try {
+//                 Thread.sleep(1000);
+//             } catch (InterruptedException e) {
+//                 // TODO Auto-generated catch block
+//                 e.printStackTrace();
+//             }
+//             totalBalance-=amount;
+//             System.out.println(totalBalance);
+//         }
+//         else{
+//             System.out.println("limit me raho apne ");
+//         }
+
+//     }
+    
+
+// }
+// class Hello{
+  
+// public static void main(String[] args) {
+//     WithdrawThread  t1= new WithdrawThread(800);
+//     WithdrawThread  t2= new WithdrawThread(500);
+//     t1.start();
+//     try {
+//         t1.join();
+//     } catch (InterruptedException e) {
+//         // TODO Auto-generated catch block
+//         e.printStackTrace();
+//     }
+//     t2.start();
+
+
+    
+// }
+
+
+// }
+// sleep ,start
+
+// class MyThread extends Thread {
+//     public void run() {
+//         for (int i = 1; i <= 10; i++) {
+//             System.out.println(getName() + " is running with priority " + getPriority());
+//             Thread.yield();
+//         }
+//     }
+// }
+
+// public class PriorityExampleWithoutSuper {
+//     public static void main(String[] args) {
+//         MyThread t1 = new MyThread();
+//         MyThread t2 = new MyThread();
+
+//         t1.setName("Low Priority Thread");   
+//         t2.setName("High Priority Thread");
+
+//         t1.setPriority(Thread.MIN_PRIORITY); // 1
+//         t2.setPriority(Thread.MAX_PRIORITY); // 10 priority
+
+//         t1.start();
+//         t2.start();
+//     }
+// }
+
+public class SimpleWaitNotify {
+
+    private boolean isSignalled = false;
+
+    public synchronized void sendSignal() {
+        isSignalled = true;
+        System.out.println("Producer: Sending signal...");
+        notify();
+    }
+
+    public synchronized void waitForSignal() {
+        while (!isSignalled) {
+            try {
+                System.out.println("Consumer: Waiting for signal...");
+                wait();
+            } catch (InterruptedException e) {
+
+            }
+        }
+        System.out.println("Consumer: Got the signal! Proceeding...");
+    }
+
+    public static void main(String[] args) {
+        SimpleWaitNotify obj = new SimpleWaitNotify();
+
+        Thread consumer = new Thread(() -> {
+            obj.waitForSignal();
+        });
+
+        Thread producer = new Thread(() -> {
+            try {
+                Thread.sleep(5000);
+            } catch (InterruptedException e) {
+            }
+            obj.sendSignal();
+        });
+
+        consumer.start();
+        producer.start();
+    }
+}
+
+
+
+// class Hello{
+//     public static void main(String[] args) {
+//           Thread t1=  new Thread(()->{
+//             System.out.println("hello");
+//               try {
+//                   Thread.sleep(2000);
+//               } catch (InterruptedException ex) {
+//               }
+//               System.out.println("byeee");
+//         });
+//         Thread t2=  new Thread(()->{
+//             System.out.println("hiiii");
+//         });
+
+//         t1.start();
+//         try {
+//             t1.join();
+//         } catch (InterruptedException e) {
+//             // TODO Auto-generated catch block
+//             e.printStackTrace();
+//         }
+//         t2.start();
+
+//     }
+// }
+
+// class MyThread extends Thread{
+//     public  void run(){
+
+//     }
+// }
+
+
+// class Hello{
+//     public static void main(String[] args) {
+//         System.out.println("idher dekhooo");
+//           Thread t1=  new Thread( ()->{
+//             System.out.println("hello");
+        
+//          });
+//          Thread t2=  new Thread( ()->{
+//             System.out.println("hiiii");
+
+//          });
+//          t1.start();
+//          t2.start();
+
+
+//     }
+// }
+
+
+
+// wait notify 
+
+
+
+
+
+
+
+
+
+
+
+
